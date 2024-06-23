@@ -33,7 +33,7 @@ fun WbChip(
         border = null,
         shape = RoundedCornerShape(50.dp),
         modifier = Modifier
-            .padding(start = 16.dp),
+            .padding(start = 8.dp),
         onClick = { selected = !selected },
         label = {
             Text(text)
@@ -51,7 +51,7 @@ fun WbChip(
             null
         },
         colors = FilterChipDefaults.filterChipColors(
-            containerColor = Color(0xFF80B7A3F1),
+            containerColor = Color(0xFFF5ECFF),
             labelColor = Color(0xFF660EC8)
         )
     )

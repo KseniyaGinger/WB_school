@@ -1,14 +1,17 @@
 package ru.wildberries.school.ui.theme
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -70,15 +73,18 @@ fun WbTextColumn() {
 @Composable
 fun WbText(
     text: String = "The quick brown box jumps over the lazy dog",
-    fontSize: androidx.compose.ui.unit.TextUnit,
+    fontSize: TextUnit,
     fontWeight: FontWeight,
-    modifier: Modifier = Modifier
-) {
+    modifier: Modifier = Modifier,
+    spacing: Dp = 8.dp
+)
+{
     Text(
         text = text,
         fontSize = fontSize,
         fontWeight = fontWeight,
         fontFamily = SFProDisplay,
-        modifier = modifier
+        modifier = modifier,
     )
+    Spacer(modifier = Modifier.height(spacing))
 }

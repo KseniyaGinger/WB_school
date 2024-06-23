@@ -21,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.tooling.preview.Preview
@@ -164,9 +165,9 @@ fun WbButtonText(
         modifier = modifier,
         enabled = enabled,
         colors = ButtonDefaults.buttonColors(
-            containerColor = White,
+            containerColor = Transparent,
             contentColor = contentColor,
-            disabledContainerColor = White,
+            disabledContainerColor = Transparent,
             disabledContentColor = Color(0xFF80B7A3F1)
         )
     ) {

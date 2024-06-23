@@ -55,7 +55,7 @@ fun WbTextField(
                     fontFamily = SFProDisplay,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.SemiBold,
-                    color = Color(0xFFADB5BD)
+                    color = Color(0xFFADB5BD),
                 )
             },
             leadingIcon = {

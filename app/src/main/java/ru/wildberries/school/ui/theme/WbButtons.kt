@@ -156,7 +156,7 @@ fun WbButtonText(
     modifier: Modifier = Modifier,
     isPrimary: Boolean = true,
     enabled: Boolean = true,
-    text: String = "Button",
+    text: String = "Button"
 ) {
     val contentColor = if (isPrimary) Color(0xFF9A41FE) else Color(0xFF660EC8)
 

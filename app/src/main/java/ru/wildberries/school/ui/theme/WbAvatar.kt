@@ -36,7 +36,7 @@ fun WBAvatarRegular(){
         painter = painterResource(
             R.drawable.change_avatar__1_
         ),
-        contentDescription = null
+        contentDescription = null,
     )
 }
 
@@ -47,6 +47,6 @@ fun WBAvatarMeeting() {
             R.mipmap.ic_launcher_foreground_av_meeting
         ),
         contentDescription = null,
-        modifier = Modifier.size(50.dp)
+        modifier = Modifier.size(50.dp),
     )
 }

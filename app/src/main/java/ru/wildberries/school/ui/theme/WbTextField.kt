@@ -67,7 +67,6 @@ fun WbTextField(
             unfocusedContainerColor = Color(0xFFF7F7FC),
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
-            cursorColor = Color.Transparent
         ),
         shape = RoundedCornerShape(16.dp),
         modifier = Modifier

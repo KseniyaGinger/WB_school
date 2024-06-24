@@ -40,42 +40,40 @@ fun WbTextField(
 ) {
     val searchQuery = remember { mutableStateOf(TextFieldValue("")) }
 
-    Box(
-        modifier = modifier
+    TextField(
+        value = searchQuery.value,
+        onValueChange = {
+            searchQuery
+                .value = it
+        },
+        placeholder = {
+            Text(
+                text = placeholderText,
+                fontFamily = SFProDisplay,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color(0xFFADB5BD),
+            )
+        },
+        leadingIcon = {
+            Icon(
+                imageVector = searchIcon,
+                contentDescription = null,
+                tint = Color(0xFFADB5BD)
+            )
+        },
+        colors = TextFieldDefaults.colors
+            (
+            unfocusedContainerColor = Color(0xFFF7F7FC),
+            focusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent,
+            cursorColor = Color.Transparent
+        ),
+        shape = RoundedCornerShape(16.dp),
+        modifier = Modifier
+            .fillMaxWidth()
             .padding(16.dp)
-    ) {
-        TextField(
-            value = searchQuery.value,
-            onValueChange = {
-                searchQuery
-                    .value = it },
-            placeholder = {
-                Text(
-                    text = placeholderText,
-                    fontFamily = SFProDisplay,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.SemiBold,
-                    color = Color(0xFFADB5BD),
-                )
-            },
-            leadingIcon = {
-                Icon(
-                    imageVector = searchIcon,
-                    contentDescription = null,
-                    tint = Color(0xFFADB5BD)
-                )
-            },
-            colors = TextFieldDefaults.colors
-                (
-                unfocusedContainerColor = Color(0xFFF7F7FC),
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            ),
-            shape = RoundedCornerShape(16.dp),
-            modifier = Modifier
-                .fillMaxWidth()
-        )
-    }
+    )
 }
 
 @Preview(showBackground = true)

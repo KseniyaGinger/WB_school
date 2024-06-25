@@ -1,66 +1,92 @@
 package ru.wildberries.school.ui.theme
 
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Done
-import androidx.compose.material3.FilterChip
-import androidx.compose.material3.FilterChipDefaults
-import androidx.compose.material3.Icon
+import androidx.compose.material3.SuggestionChip
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.w3c.dom.Text
+import androidx.compose.ui.unit.sp
+
+//@Composable
+//fun WbChip(
+//    modifier: Modifier,
+//    text: String
+//) {
+//    var selected by remember { mutableStateOf(false) }
+//
+//    FilterChip(
+//        border = null,
+//        shape = RoundedCornerShape(16.dp),
+//        modifier = modifier
+//            .padding(start = 0.dp, end = 4.dp)
+//            .height(24.dp)
+//            .wrapContentWidth(),
+//        onClick = { selected = !selected },
+//        label = {
+//            Text(
+//                text,
+//                fontSize = 10.sp,
+//                modifier = Modifier
+//                    .padding(horizontal = 0.dp),
+//                fontFamily = SFProDisplay,
+////                fontSize = 10.sp
+//            )
+//        },
+//        selected = selected,
+//        leadingIcon = if (selected) {
+//            {
+//                Icon(
+//                    imageVector = Icons.Filled.Done,
+//                    contentDescription = "Done icon",
+//                    modifier = Modifier.size(16.dp),
+//                )
+//            }
+//        } else {
+//            null
+//        },
+//        colors = FilterChipDefaults.filterChipColors(
+//            containerColor = Color(0xFFF5ECFF),
+//            labelColor = Color(0xFF660EC8)
+//        )
+//    )
+//}
 
 @Composable
 fun WbChip(
-    modifier: Modifier,
-    text: String
+    text: String,
+    modifier: Modifier = Modifier,
+    backgroundColor: Color = Color(0xFFF5ECFF),
+    contentColor: Color = Color(0xFF660EC8),
 ) {
-    var selected by remember { mutableStateOf(false) }
-
-    FilterChip(
-        border = null,
-        shape = RoundedCornerShape(50.dp),
-        modifier = Modifier
-            .padding(start = 8.dp),
-        onClick = { selected = !selected },
-        label = {
-            Text(text)
-        },
-        selected = selected,
-        leadingIcon = if (selected) {
-            {
-                Icon(
-                    imageVector = Icons.Filled.Done,
-                    contentDescription = "Done icon",
-                    modifier = Modifier.size(FilterChipDefaults.IconSize),
-                )
-            }
-        } else {
-            null
-        },
-        colors = FilterChipDefaults.filterChipColors(
-            containerColor = Color(0xFFF5ECFF),
-            labelColor = Color(0xFF660EC8)
+    Box(
+        modifier = modifier
+            .background(color = backgroundColor, shape = RoundedCornerShape(40.dp))
+            .padding(horizontal = 10.dp, vertical = 2.dp)
+    ) {
+        Text(
+            text = text,
+            color = contentColor,
+            fontFamily = SFProDisplay,
+            fontSize = 10.sp
         )
-    )
-
+    }
 }
+
 
 @Composable
 fun WbChipsRow(
-    modifier: Modifier
+    modifier: Modifier,
 ) {
     val chipList = listOf(
         "Python",
@@ -68,8 +94,8 @@ fun WbChipsRow(
         "Moscow"
     )
     LazyRow(
-        modifier = Modifier
-            .padding(16.dp)
+        modifier = Modifier,
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         chipList.forEach {
             item {
@@ -84,6 +110,6 @@ fun WbChipsRow(
 
 @Preview(showBackground = true)
 @Composable
-fun ShowChips() {
+fun ChipsPreview() {
     WbChipsRow(modifier = Modifier)
 }

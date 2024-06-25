@@ -35,15 +35,6 @@ val Typography = Typography(
     */
 )
 
-//val Typography.Subheading1: TextStyle
-//    get() = TextStyle(
-//        fontSize = 18.sp,
-//    )
-//
-//val Typography.Metadata2: TextStyle
-//    get() = TextStyle(
-//        fontSize = 10.sp,
-//    )
 
 val SFProDisplay = FontFamily(
     Font(R.font.sf_pro_display_regular, FontWeight.Normal),

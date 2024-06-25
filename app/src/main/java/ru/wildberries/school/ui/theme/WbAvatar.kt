@@ -3,6 +3,7 @@ package ru.wildberries.school.ui.theme
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -47,6 +48,8 @@ fun WBAvatarMeeting() {
             R.mipmap.ic_launcher_foreground_av_meeting
         ),
         contentDescription = null,
-        modifier = Modifier.size(50.dp),
+        modifier = Modifier
+            .size(64.dp)
+//            .padding(4.dp),
     )
 }

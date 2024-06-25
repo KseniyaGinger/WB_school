@@ -36,7 +36,7 @@ fun WbMeetingCard() {
             .padding(16.dp),
         shape = AbsoluteCutCornerShape(0),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = Color.Transparent
         )
     ) {
         Row(

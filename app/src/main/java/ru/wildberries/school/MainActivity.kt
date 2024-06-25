@@ -21,6 +21,7 @@ import ru.wildberries.school.ui.theme.SFProDisplay
 import ru.wildberries.school.ui.theme.WbAvatars
 import ru.wildberries.school.ui.theme.WbButtons
 import ru.wildberries.school.ui.theme.WbChipsRow
+import ru.wildberries.school.ui.theme.WbMeetingCard
 import ru.wildberries.school.ui.theme.WbSchoolTheme
 import ru.wildberries.school.ui.theme.WbTextColumn
 import ru.wildberries.school.ui.theme.WbTextField
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier
                                 .padding(start = 16.dp)
                                 )
+                        WbMeetingCard()
                     }
                 }
             }

@@ -39,7 +39,10 @@ class MainActivity : ComponentActivity() {
                             searchIcon = Icons.Default.Search,
                             placeholderText = "Поиск"
                         )
-                        WbChipsRow(modifier = Modifier)
+                        WbChipsRow(
+                            modifier = Modifier
+                                .padding(start = 16.dp)
+                                )
                     }
                 }
             }

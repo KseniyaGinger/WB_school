@@ -1,7 +1,6 @@
 package ru.wildberries.school.ui.theme
 
 import androidx.compose.foundation.layout.Column
-//import androidx.compose.foundation.layout.ColumnScopeInstance.weight
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -14,6 +13,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -22,31 +22,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ru.wildberries.school.R
 
-@Preview(showBackground = true)
-@Composable
-fun MeetingCardPreview() {
-    Column {
-        WbMeetingCard(
-            "Developer meeting",
-            "13.09.2024 — Москва",
-            chips = listOf(
-                "Python",
-                "Junior",
-                "Moscow"
-            ),
-            "Закончилась",
-            icon = R.mipmap.ic_launcher_foreground_av_meeting
-        )
-    }
-}
-
 
 @Composable
-fun WbMeetingCard(
+fun WbCommunityCard(
     title: String,
     description: String,
-    chips: List<String>,
-    status: String,
     icon: Int
 ) {
     Card(
@@ -63,14 +43,13 @@ fun WbMeetingCard(
                     .fillMaxWidth()
             ) {
                 WbAvatarMeeting(
-                    icon = icon,
                     modifier = Modifier
+                        .clip(RoundedCornerShape(24.dp)),
+                    icon = icon
                 )
-                MeetingData(
+                CommunityInfo(
                     title = title,
-                    dateLocation = description,
-                    status = status,
-                    chips = chips
+                    numberOfParticipants = description
                 )
             }
             HorizontalDivider(
@@ -83,13 +62,10 @@ fun WbMeetingCard(
     }
 }
 
-
 @Composable
-fun MeetingData(
+fun CommunityInfo(
     title: String,
-    dateLocation: String,
-    status: String,
-    chips: List<String>,
+    numberOfParticipants: String
 ) {
     Column(
         modifier = Modifier
@@ -105,24 +81,22 @@ fun MeetingData(
         )
         Spacer(modifier = Modifier.height(10.dp))
         Text(
-            text = dateLocation,
+            text = numberOfParticipants,
             fontSize = 12.sp,
             fontFamily = SFProDisplay,
             fontWeight = FontWeight.Normal,
             color = Color(0xFFA4A4A4)
         )
         Spacer(modifier = Modifier.height(10.dp))
-        WbChipsRow(modifier = Modifier, chips = chips)
     }
-    Text(
-        text = status,
-        fontSize = 10.sp,
-        fontFamily = SFProDisplay,
-        fontWeight = FontWeight.Normal,
-        color = Color(0xFFA4A4A4),
-        modifier = Modifier
-            .padding(vertical = 12.dp, horizontal = 16.dp)
-    )
 }
 
-
+@Preview(showBackground = true)
+@Composable
+fun CommunityInfoPreview() {
+    WbCommunityCard(
+        title = "Designa",
+        description = "10 000 человек",
+        icon = R.mipmap.ic_launcher_designa
+    )
+}

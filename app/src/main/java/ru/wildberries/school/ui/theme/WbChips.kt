@@ -18,49 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-//@Composable
-//fun WbChip(
-//    modifier: Modifier,
-//    text: String
-//) {
-//    var selected by remember { mutableStateOf(false) }
-//
-//    FilterChip(
-//        border = null,
-//        shape = RoundedCornerShape(16.dp),
-//        modifier = modifier
-//            .padding(start = 0.dp, end = 4.dp)
-//            .height(24.dp)
-//            .wrapContentWidth(),
-//        onClick = { selected = !selected },
-//        label = {
-//            Text(
-//                text,
-//                fontSize = 10.sp,
-//                modifier = Modifier
-//                    .padding(horizontal = 0.dp),
-//                fontFamily = SFProDisplay,
-////                fontSize = 10.sp
-//            )
-//        },
-//        selected = selected,
-//        leadingIcon = if (selected) {
-//            {
-//                Icon(
-//                    imageVector = Icons.Filled.Done,
-//                    contentDescription = "Done icon",
-//                    modifier = Modifier.size(16.dp),
-//                )
-//            }
-//        } else {
-//            null
-//        },
-//        colors = FilterChipDefaults.filterChipColors(
-//            containerColor = Color(0xFFF5ECFF),
-//            labelColor = Color(0xFF660EC8)
-//        )
-//    )
-//}
 
 @Composable
 fun WbChip(
@@ -87,17 +44,13 @@ fun WbChip(
 @Composable
 fun WbChipsRow(
     modifier: Modifier,
+    chips: List<String>
 ) {
-    val chipList = listOf(
-        "Python",
-        "Junior",
-        "Moscow"
-    )
     LazyRow(
         modifier = Modifier,
         horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
-        chipList.forEach {
+        chips.forEach {
             item {
                 WbChip(
                     modifier = modifier,
@@ -112,5 +65,12 @@ fun WbChipsRow(
 @Preview(showBackground = true)
 @Composable
 fun ChipsPreview() {
-    WbChipsRow(modifier = Modifier)
+    WbChipsRow(
+        modifier = Modifier,
+        chips = listOf(
+            "Python",
+            "Junior",
+            "Moscow"
+        )
+    )
 }

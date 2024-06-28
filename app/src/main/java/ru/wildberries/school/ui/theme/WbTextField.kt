@@ -40,6 +40,8 @@ fun WbTextField(
 ) {
     val searchQuery = remember { mutableStateOf(TextFieldValue("")) }
 
+    // BasicTextField2
+
     TextField(
         value = searchQuery.value,
         onValueChange = {
